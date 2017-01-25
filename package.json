@@ -42,9 +42,12 @@
   "license": "MIT",
   "dependencies": {
     "clapp": "^1.1.1",
+    "dark-sky": "^1.0.10",
     "discord.js": "^11.0.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "node-opus": "^0.2.4",
+    "request": "^2.79.0",
+    "timezone": "^1.0.6",
     "uws": "^0.12.0"
   }
 }

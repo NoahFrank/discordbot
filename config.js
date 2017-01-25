@@ -7,7 +7,7 @@ module.exports = {
   // The bot's command prefix. The bot will recognize as command any message that begins with it.
   // i.e: "-jeeves foo" will trigger the command "foo",
   //      whereas "Jeeves foo" will do nothing at all.
-  prefix:  "!",
+  prefix:  "-jeeves",
 
   // Your bot's user token. If you don't know what that is, go here:
   // https://discordapp.com/developers/applications/me
@@ -21,7 +21,7 @@ module.exports = {
   // MANAGE_MESSAGES - 	0x00002000
   // More info: https://discordapp.com/developers/docs/topics/permissions
   deleteAfterReply: {
-    enabled: true,
+    enabled: false,
     time: 10000, // In milliseconds
   }
 };
