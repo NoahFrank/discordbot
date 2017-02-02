@@ -9,14 +9,14 @@
     "url": ""
   },
   "files": [
-    "lib"
+    "src"
   ],
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "keywords": [
     ""
   ],
   "scripts": {
-    "bot": "node ./lib/index.js",
+    "bot": "node ./src/index.js",
     "prepublish": "gulp prepublish",
     "test": "gulp"
   },
@@ -45,6 +45,7 @@
     "dark-sky": "^1.0.10",
     "discord.js": "^11.0.0",
     "erlpack": "github:hammerandchisel/erlpack",
+    "minimist-string": "^1.0.1",
     "node-opus": "^0.2.4",
     "request": "^2.79.0",
     "timezone": "^1.0.6",

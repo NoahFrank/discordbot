@@ -1,24 +1,22 @@
-// CONFIG
+// START CONFIG
 const googleMapsAPIKey = "AIzaSyAF4Mu9YsKe933qVXo5xANq69KNYEVyV7k";
 const darkSkyAPIKey = "75746afa2562fbb797fb7a3f2db07f42";
 const LANGUAGE = 'en';
 // END CONFIG
 
-const Clapp = require('../modules/clapp-discord');
+const Command = require('../command');
 const request = require('request');
 const tz = require('timezone/loaded');
 
 const DarkSky = require('dark-sky');
 const forecast = new DarkSky(darkSkyAPIKey);
 
-module.exports = new Clapp.Command({
+module.exports = new Command({
   name: "weather",
   desc: "Gets the weather for Rochester, NY or any given location",
-  fn: (argv, context) => {
+  action: (argv, context) => {
     return new Promise( (fulfill, reject) => {
-      // This output will be redirected to your app's onReply function
-      let query = argv.args.location;
-      console.log(`QUERY: ${query}`);
+      let query = argv.location;
       let longLatRequest = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${googleMapsAPIKey}`;
 
       // Making Google Geocoding API Request to find lat and long for any given query (zipcode, city, address, etc)
@@ -76,8 +74,8 @@ module.exports = new Clapp.Command({
     {
       name: 'location',
       desc: 'Where should we get weather for? (Address, Zipcode, City)',
-      type: 'string',
-      required: false,
+      alias: 'l',
+      type: String,
       default: '14623'
     }
   ]
